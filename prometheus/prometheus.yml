@@ -1,0 +1,25 @@
+global:
+  scrape_interval: 15s
+  scrape_timeout: 10s
+  evaluation_interval: 15s
+
+alerting:
+  alertmanagers:
+  - static_configs:
+    - targets:
+      # - alertmanager:9093
+
+scrape_configs:
+- job_name: prometheus
+  metrics_path: /metrics
+  scheme: http
+  static_configs:
+  - targets:
+    - localhost:9090
+
+- job_name: jenkins
+  metrics_path: <<replace-me>> #ideally it would be  /prometheus/
+  scheme: http
+  static_configs:
+  - targets:
+    - <<replace-me>> #jenkins url and port (if using https endpoint, change schema to https)
