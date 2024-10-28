@@ -17,9 +17,9 @@ scrape_configs:
   - targets:
     - localhost:9090
 
-- job_name: jenkins
-  metrics_path: <<replace-me>> #ideally it would be  /prometheus/
-  scheme: http
-  static_configs:
-  - targets:
-    - <<replace-me>> #jenkins url and port (if using https endpoint, change schema to https)
+# - job_name: jenkins
+#   metrics_path: <<replace-me>> #ideally it would be  /prometheus/
+#   scheme: http      #if target endpoint schema is https, change schema https
+#   static_configs:
+#   - targets:
+#     - <<replace-me>> #jenkins url and port 
